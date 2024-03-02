@@ -39,7 +39,7 @@ Add the following text to the file:
 ```md
 +++
 title = "First Blog"
-date = 2024-02-29
+date = 2024-03-02
 +++
 
 # First Blog
