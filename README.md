@@ -1,5 +1,5 @@
 # example-static-website
-Example static webiste for 2/29/2024 Tech Seminar on building websites.
+Example static webiste for 3/2/2024 Tech Seminar on building websites.
 
 ### Installing Zola
 - https://github.com/getzola/zola/releases
