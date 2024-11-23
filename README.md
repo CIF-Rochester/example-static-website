@@ -95,8 +95,6 @@ Add the following to `page.html`:
 {% endblock content %}
 ```
 
-Make sure `zola serve` is running, and go to http://127.0.0.1:1111/blog/first-blog/. You should see your blog post!
-
 Now, let's make sure we can navigate to our blog posts without having to manually enter the link. 
 
 In `_index.md`, add the following:
@@ -111,6 +109,8 @@ page_template = "page.html"
 ```
 
 Make sure `zola serve` is running, and go to http://127.0.0.1:1111/blog/. You should see the proper title and a clickable list of your blog posts (which for right now is just one).
+
+Now you can navigate to your [first blog](http://127.0.0.1:1111/blog/first-blog). You should see your blog post!
 
 Now, let's make it so we can get to the blog post page from the homepage (`index.html`). 
 
