@@ -46,6 +46,17 @@ date = 2024-03-02
 Content of the first blog.
 ```
 
+In `_index.md`, add the following:
+
+```md
++++
+title = "Blog Posts"
+sort_by = "date"
+template = "blog.html"
+page_template = "page.html"
++++
+```
+
 In `base.html`, add the following:
 ```html
 <!DOCTYPE html>
@@ -93,19 +104,6 @@ Add the following to `page.html`:
 <p class="subtitle"><strong>{{ page.date }}</strong></p>
 {{ page.content | safe }}
 {% endblock content %}
-```
-
-Now, let's make sure we can navigate to our blog posts without having to manually enter the link. 
-
-In `_index.md`, add the following:
-
-```md
-+++
-title = "Blog Posts"
-sort_by = "date"
-template = "blog.html"
-page_template = "page.html"
-+++
 ```
 
 Make sure `zola serve` is running, and go to http://127.0.0.1:1111/blog/. You should see the proper title and a clickable list of your blog posts (which for right now is just one).
