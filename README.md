@@ -105,10 +105,7 @@ Add the following to `page.html`:
 {{ page.content | safe }}
 {% endblock content %}
 ```
-
-Make sure `zola serve` is running, and go to http://127.0.0.1:1111/blog/. You should see the proper title and a clickable list of your blog posts (which for right now is just one).
-
-Now you can navigate to your [first blog](http://127.0.0.1:1111/blog/first-blog). You should see your blog post!
+Now you can navigate to your first blog at http://127.0.0.1:1111/blog/first-blog. You should see your blog post!
 
 Now, let's make it so we can get to the blog post page from the homepage (`index.html`). 
 
@@ -116,6 +113,23 @@ Add this line before the `{% endblock content %}`:
 
 ```html
 <p>Click <a href="{{ get_url(path='@/blog/_index.md') }}">here</a> to see my posts.</p>
+```
+
+Add this to `blog.html`:
+
+```html
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    {{ section.title }}
+</h1>
+<ul>
+    {% for page in section.pages %}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
 ```
 
 Go to http://127.0.0.1:1111/, and now you can navigate your entire website from the homepage.
